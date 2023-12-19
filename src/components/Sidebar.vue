@@ -7,7 +7,7 @@
 
         
         <div class="menu">
-            <router-link class="button" to="/">
+            <router-link class="button" to="/" isDark="isDark">
                 <i class="bi bi-house-fill"></i>
                 <span class="text">Início</span>
             </router-link>
@@ -25,6 +25,10 @@
         <div class="flex"></div>
 
         <div class="menu">
+            <div class="button" @click="toggleDark()">
+                <i class="bi bi-moon"></i>
+                <span class="text">Mudar Tema</span>
+            </div>
             <a class="button" href="https://github.com/Rodrigotutz" target="blank">
                 <i class="bi bi-github"></i>
                 <span class="text">Github</span>
@@ -35,6 +39,10 @@
 
 <script setup>
     import { ref } from 'vue'
+    import { useDark, useToggle } from '@vueuse/core'
+ 
+    const isDark = useDark()
+    const toggleDark = useToggle(isDark)
 
     const is_expanded = ref(localStorage.getItem("is_expanded") === 'true')
     const ToggleMenu = () => {
@@ -119,7 +127,7 @@
                 } 
 
                 &.router-link-exact-active {
-                    border-right: 5px solid var(--primary);
+                    border-right: 4px solid var(--primary);
                 }
             }
         }

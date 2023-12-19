@@ -15,9 +15,9 @@
 
 <style lang="scss">
   :root {
-    --primary: #4ade80;
-    --grey: #64748b;
-    --dark: #1e293b;
+    --primary: #ffffff;
+    --grey: #ffffff;
+    --dark: #1a1a1b;
     --dark-alt: #334155;
     --light: #f1f5f9;
     --sidebar-width: 230px;
@@ -33,6 +33,7 @@
 
   .app {
     display: flex;
+    min-height: 100dvh;
 
     .fade-enter-from,
     .fade-leave-to {
